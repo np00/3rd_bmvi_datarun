@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>BMVI 3rd Data Run</title>
+		<!-- styles -->
+		<link href="css/mapper.css" rel="stylesheet">
+		<link href="css/leaflet.css" rel="stylesheet">
+		<link href="css/codemirror.css" rel="stylesheet">
+		
+		<!-- data -->
+		<!-- js libs -->
+		<script src="js/lib/leaflet.js"></script> <!-- 1.3.3 -->
+		<script src="js/lib/AnimatedMarker.js"></script> <!-- n/a -->
+		<script src="js/lib/SnakeAnim.js"></script> <!-- n/a -->
+		<script src="js/lib/codemirror.js"></script> <!-- no idea -->
+  		<script src="js/config.js" defer></script>
+  		<script src="data/snake_route.js"></script> <!-- data for the snake oute --> 
+
+    	<script data-main="mapper" src="js/lib/require.js" defer></script>
+	</head>
+	<body bgcolor="Ivory" onload="init()">
+
+
+	<a href="https://github.com/np00/3rd_bmvi_datarun"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+		
+		<h1>BMVI 3rd Data Run- 2 March 2018</h1>
+		<div id="map"></div>
+		<!-- <button type="button" onclick="clearMap();">ClearMap</button> -->
+		<button type="button" onclick="start_ice();">Start ICE</button>
+		<button type="button" onclick="start_tram_to_siegburg();">Start Tram to Siegburg</button>
+		<button type="button" onclick="start_tram_from_siegburg();">Start Tram from Siegburg</button>
+		<div style="padding:25px 0 0 0"> 
+		
+<!--
+		<table>
+			<tr>
+				<th style="padding:0 25px 0 25px;" align="left">LinkedGeoData <img src="img/database.png" alt="Database Icon"></th>
+				<th style="padding:0 25px 0 25px;" align="left">DBpedia <img src="img/database.png" alt="Database Icon"></th>
+			</tr>
+			<tr>
+				<td style="padding:0 25px 0 25px;">
+					<textarea id="lgd_query" placeholder="Specify your SPARQL Query here" wrap="hard"></textarea>
+				</td>
+				<td style="padding:0 25px 0 25px;">
+					<textarea id="dbpedia_query" placeholder="Specify your SPARQL Query here" wrap="hard"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding:0 25px 0 25px;">
+					<button type="button" onclick="executeLgdQuery();">Execute Query</button>
+				</td>
+				<td style="padding:0 25px 0 25px;">
+					<button type="button" onclick="executeDbPediaQuery();">Execute Query</button>
+				</td>
+			</tr>
+		</table>
+	-->
+	</div>
+	
+		<p>Team name: <b>Team 2</b></p>
+		<ul>
+			<li><a href="http://np00.github.io/">Niklas Petersen</a></li>
+			<li><a href="https://github.com/BBuchwald">Bjoern Buchwald</a></li>
+			<li><a href="https://github.com/ChristianStur">Christian Stur</a></li>
+		</ul>
+	<br>
+		<p>Our Source Code License: <a href="https://opensource.org/licenses/MIT">MIT license</a></p>
+		<br>
+
+	<p>------</p>
+	<div>Icons made by 
+		<a href="https://www.flaticon.com/authors/designmodo" title="Designmodo" font-size="small">Designmodo</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/scott-de-jonge" title="Scott de Jonge">Scott de Jonge</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/eleonor-wang" title="Eleonor Wang">Eleonor Wang</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/cursor-creative" title="Cursor Creative">Cursor Creative</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/bogdan-rosu" title="Bogdan Rosu">Bogdan Rosu</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+<div>Train Station Icon license: cc-by-2.0 at <a href="https://commons.wikimedia.org/wiki/File:Gfi-set01-railway1.png">Wikimedia Commons</a></div>
+	</body>
+</html>
+
+
+
+
+
