@@ -1,7 +1,7 @@
 # Results of the German Goverment Hackaton (BMVI - 3rd Data Run)
 
 ## Slogan of the Hackaton
-"Intelligente emissionsarme Mobilitätslösungen in Städten" (de) 
+"Intelligente emissionsarme Mobilitätslösungen in Städten" (de) [Offical Info Link](http://www.bmvi.de/SharedDocs/DE/Termine-mFUND/mfund-data-run-2018.html) 
 
 ## Our approach
 Building a personalized, interactive, animated web application to reduce the perceived complexity by currently man people who do not use public transportation at all. The idea is that by issuing a ticket, the passenger received by default a generated web view with his/her connection. Having this animated map "empowers" the client, instead of feeling like loosing control once a train connection is missed. 
