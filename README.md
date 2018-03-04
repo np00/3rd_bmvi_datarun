@@ -17,5 +17,5 @@ https://rawgit.com/np00/3rd_bmvi_datarun/master/mapper.html
 
 ## Team
 - [Niklas Petersen](http://np00.github.io/) - [Frauhofer IAIS](https://www.iais.fraunhofer.de/)
-- [Björn Buchwald](https://github.com/BBuchwald) - [Appplant GmbH](appplant.de/)
-- [Christian Stur](https://github.com/ChristianStur) - [Appplant GmbH](appplant.de/)
+- [Björn Buchwald](https://github.com/BBuchwald) - [Appplant GmbH](http://appplant.de/)
+- [Christian Stur](https://github.com/ChristianStur) - [Appplant GmbH](http://appplant.de/)
